@@ -24,6 +24,7 @@ const ProjectsSection = () => {
       users: "New",
       growth: "🚀",
       rating: 0,
+      image: "/lovable-uploads/18ac63c5-3b62-44c3-8edf-24138b039d38.png",
       status: "live" as const,
     },
     {
