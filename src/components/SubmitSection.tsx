@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Upload, CheckCircle, PlusCircle, Rocket } from "lucide-react"
+import { Upload, CheckCircle, PlusCircle, Rocket, Send } from "lucide-react"
 
 const SubmitSection = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +12,10 @@ const SubmitSection = () => {
     website: "",
     twitter: "",
     discord: "",
+    contractAddress: "",
+    launchUrl: "",
+    telegramUrl: "",
+    projectImage: null as File | null,
   })
 
   const categories = ["DeFi", "Gaming", "NFT", "Tools", "Social", "Infrastructure"]
@@ -34,6 +38,16 @@ const SubmitSection = () => {
       ...prev,
       [e.target.name]: e.target.value
     }))
+  }
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      setFormData(prev => ({
+        ...prev,
+        projectImage: file
+      }))
+    }
   }
 
   return (
@@ -139,6 +153,52 @@ const SubmitSection = () => {
                 </div>
 
                 <div>
+                  <label className="block text-sm font-medium mb-2">Contract Address (CA)</label>
+                  <input
+                    type="text"
+                    name="contractAddress"
+                    value={formData.contractAddress}
+                    onChange={handleInputChange}
+                    className="w-full p-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-mono"
+                    placeholder="Enter your contract address"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Project Image</label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      required
+                    />
+                    <div className="w-full p-6 bg-background border border-border border-dashed rounded-lg text-center hover:border-primary transition-colors">
+                      <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">
+                        {formData.projectImage ? formData.projectImage.name : "Click to upload project image"}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">PNG, JPG, GIF up to 10MB</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Launch URL (e.g., letsbonk.fun)</label>
+                  <input
+                    type="url"
+                    name="launchUrl"
+                    value={formData.launchUrl}
+                    onChange={handleInputChange}
+                    className="w-full p-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="https://letsbonk.fun/token/your-token"
+                    required
+                  />
+                </div>
+
+                <div>
                   <label className="block text-sm font-medium mb-2">Website URL</label>
                   <input
                     type="url"
@@ -174,6 +234,18 @@ const SubmitSection = () => {
                       placeholder="Discord invite"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Telegram</label>
+                  <input
+                    type="url"
+                    name="telegramUrl"
+                    value={formData.telegramUrl}
+                    onChange={handleInputChange}
+                    className="w-full p-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="https://t.me/your-group"
+                  />
                 </div>
 
                 <Button type="submit" variant="hero" className="w-full">
