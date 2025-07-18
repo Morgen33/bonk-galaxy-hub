@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Rocket, Star, Sparkles } from "lucide-react"
-import bonkMascot from "@/assets/bonk-mascot.png"
 
 const HeroSection = () => {
   return (
@@ -20,7 +19,7 @@ const HeroSection = () => {
           <div className="mb-8 flex justify-center">
             <div className="relative">
               <img 
-                src={bonkMascot} 
+                src="/lovable-uploads/5154f45d-550b-4570-87e6-2e7f31112763.png" 
                 alt="Bonk Mascot" 
                 className="w-32 h-32 md:w-48 md:h-48 animate-float"
               />
