@@ -30,7 +30,7 @@ const HeroSection = () => {
           {/* Main title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Bonk Book
+              Bonk Deck
             </span>
             <br />
             <span className="text-2xl md:text-4xl lg:text-5xl text-muted-foreground">
