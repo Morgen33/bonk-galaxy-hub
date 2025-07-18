@@ -31,6 +31,7 @@ const ProjectsSection = () => {
       dexUrl: "https://jup.ag/swap/SOL-CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       contractAddress: "CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       analyticsUrl: "https://dexscreener.com/solana/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
+      buttonText: "letsbonk.fun",
     },
     {
       name: "BONKSwap",

@@ -17,6 +17,7 @@ interface ProjectCardProps {
   dexUrl?: string
   contractAddress?: string
   analyticsUrl?: string
+  buttonText?: string
 }
 
 const ProjectCard = ({ 
@@ -32,7 +33,8 @@ const ProjectCard = ({
   launchUrl,
   dexUrl,
   contractAddress,
-  analyticsUrl
+  analyticsUrl,
+  buttonText
 }: ProjectCardProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -133,7 +135,7 @@ const ProjectCard = ({
             disabled={status === "coming-soon"}
             onClick={handleLaunchApp}
           >
-            {status === "coming-soon" ? "Coming Soon" : "Launch App"}
+            {status === "coming-soon" ? "Coming Soon" : (buttonText || "Launch App")}
           </Button>
           {website && (
             <Button 
