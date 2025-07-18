@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Users, TrendingUp, Star } from "lucide-react"
+import { ExternalLink, Users, TrendingUp, Star, Send, Copy } from "lucide-react"
 
 interface ProjectCardProps {
   name: string
@@ -18,6 +18,7 @@ interface ProjectCardProps {
   contractAddress?: string
   analyticsUrl?: string
   buttonText?: string
+  telegramUrl?: string
 }
 
 const ProjectCard = ({ 
@@ -34,7 +35,8 @@ const ProjectCard = ({
   dexUrl,
   contractAddress,
   analyticsUrl,
-  buttonText
+  buttonText,
+  telegramUrl
 }: ProjectCardProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -115,7 +117,7 @@ const ProjectCard = ({
 
       <CardContent>
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-4 mb-4">
           <div className="flex items-center space-x-2">
             <Users className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">{users} users</span>
@@ -126,26 +128,61 @@ const ProjectCard = ({
           </div>
         </div>
 
+        {/* Contract Address */}
+        {contractAddress && (
+          <div className="mb-4 p-3 bg-muted/50 rounded-lg">
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">Contract Address:</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-6 px-2"
+                onClick={() => navigator.clipboard.writeText(contractAddress)}
+              >
+                <Copy className="w-3 h-3" />
+              </Button>
+            </div>
+            <p className="text-xs font-mono mt-1 text-foreground break-all">
+              {contractAddress}
+            </p>
+          </div>
+        )}
+
         {/* Actions */}
-        <div className="flex space-x-2">
+        <div className="flex flex-col space-y-2">
           <Button 
             variant="default" 
             size="sm" 
-            className="flex-1"
+            className="w-full"
             disabled={status === "coming-soon"}
             onClick={handleLaunchApp}
           >
             {status === "coming-soon" ? "Coming Soon" : (buttonText || "Launch App")}
           </Button>
-          {website && (
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={() => window.open(website, '_blank', 'noopener,noreferrer')}
-            >
-              <ExternalLink className="w-4 h-4" />
-            </Button>
-          )}
+          <div className="flex space-x-2">
+            {website && (
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="flex-1"
+                onClick={() => window.open(website, '_blank', 'noopener,noreferrer')}
+              >
+                <ExternalLink className="w-4 h-4 mr-1" />
+                Website
+              </Button>
+            )}
+            {telegramUrl && (
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="flex-1"
+                onClick={() => window.open(telegramUrl, '_blank', 'noopener,noreferrer')}
+              >
+                <Send className="w-4 h-4 mr-1" />
+                Telegram
+              </Button>
+            )}
+          </div>
         </div>
       </CardContent>
     </Card>

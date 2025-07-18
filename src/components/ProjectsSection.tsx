@@ -19,11 +19,11 @@ const ProjectsSection = () => {
   const projects = [
     {
       name: "$BOINK",
-      description: "Revolutionary meme token built on the $BONK ecosystem. CA: CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
-      category: "DeFi",
-      users: "New",
-      growth: "🚀",
-      rating: 0,
+      description: "Community-driven meme token with explosive growth potential and strong community backing.",
+      category: "Meme Token",
+      users: "15K",
+      growth: "+340%",
+      rating: 4.7,
       image: "/lovable-uploads/18ac63c5-3b62-44c3-8edf-24138b039d38.png",
       status: "live" as const,
       launchUrl: "https://letsbonk.fun/token/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
@@ -32,6 +32,7 @@ const ProjectsSection = () => {
       contractAddress: "CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       analyticsUrl: "https://dexscreener.com/solana/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       buttonText: "letsbonk.fun",
+      telegramUrl: "https://t.me/boinktoken",
     },
     {
       name: "BONKSwap",
