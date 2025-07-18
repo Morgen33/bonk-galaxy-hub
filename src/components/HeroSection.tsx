@@ -30,17 +30,17 @@ const HeroSection = () => {
           {/* Main title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              $BONK HUB
+              Bonk Book
             </span>
             <br />
             <span className="text-2xl md:text-4xl lg:text-5xl text-muted-foreground">
-              Where Meme Dreams Take Flight
+              A living directory of every token launched on $BONK
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover, explore, and showcase the most innovative projects built on the $BONK ecosystem. 
-            Join the community driving the future of meme coins in the Solana space.
+            Discover, explore, and showcase tokens built on the $BONK ecosystem. 
+            Join the community directory driving the future of meme tokens in the Solana space.
           </p>
 
           {/* CTA Buttons */}
@@ -51,7 +51,7 @@ const HeroSection = () => {
             </Button>
             <Button variant="outline" size="lg" className="text-lg">
               <Sparkles className="w-5 h-5 mr-2" />
-              Submit Your Project
+              Submit Your Token
             </Button>
           </div>
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/20 hover:border-primary/20 transition-all duration-300">
               <div className="text-3xl font-bold text-primary mb-2">150+</div>
-              <div className="text-muted-foreground">Active Projects</div>
+              <div className="text-muted-foreground">Listed Tokens</div>
             </div>
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/20 hover:border-primary/20 transition-all duration-300">
               <div className="text-3xl font-bold text-primary mb-2">50K+</div>

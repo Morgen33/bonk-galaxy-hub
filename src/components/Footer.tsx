@@ -32,12 +32,12 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-primary rounded-full animate-glow"></div>
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                $BONK HUB
+                Bonk Book
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              The ultimate platform for discovering, building, and showcasing projects 
-              in the $BONK ecosystem. Join the meme coin revolution on Solana.
+              The ultimate directory for discovering and showcasing tokens 
+              in the $BONK ecosystem. Join the living catalog of meme token innovation.
             </p>
             <div className="flex space-x-4">
               <Button variant="outline" size="icon">
@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="border-t border-border/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 $BONK Hub. Built with 🧡 for the community.
+              © 2024 Bonk Book. Built with 🧡 for the community.
             </div>
             <div className="flex items-center space-x-6">
               <a href="#privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
