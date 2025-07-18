@@ -26,6 +26,9 @@ const ProjectsSection = () => {
       rating: 0,
       image: "/lovable-uploads/18ac63c5-3b62-44c3-8edf-24138b039d38.png",
       status: "live" as const,
+      dexUrl: "https://jup.ag/swap/SOL-CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
+      contractAddress: "CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
+      analyticsUrl: "https://dexscreener.com/solana/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
     },
     {
       name: "BONKSwap",
@@ -35,6 +38,8 @@ const ProjectsSection = () => {
       growth: "+45%",
       rating: 4.8,
       status: "live" as const,
+      launchUrl: "https://bonkswap.io",
+      website: "https://bonkswap.io",
     },
     {
       name: "BONK Wars",
@@ -44,6 +49,8 @@ const ProjectsSection = () => {
       growth: "+120%",
       rating: 4.6,
       status: "beta" as const,
+      launchUrl: "https://bonkwars.game",
+      website: "https://bonkwars.game",
     },
     {
       name: "BONK Punks",
@@ -53,6 +60,8 @@ const ProjectsSection = () => {
       growth: "+80%",
       rating: 4.7,
       status: "live" as const,
+      launchUrl: "https://magiceden.io/marketplace/bonkpunks",
+      website: "https://bonkpunks.com",
     },
     {
       name: "BONK Analytics",
@@ -62,6 +71,8 @@ const ProjectsSection = () => {
       growth: "+25%",
       rating: 4.9,
       status: "live" as const,
+      launchUrl: "https://analytics.bonk.io",
+      website: "https://analytics.bonk.io",
     },
     {
       name: "BONK Social",
@@ -71,6 +82,8 @@ const ProjectsSection = () => {
       growth: "+65%",
       rating: 4.5,
       status: "beta" as const,
+      launchUrl: "https://social.bonk.io",
+      website: "https://social.bonk.io",
     },
     {
       name: "BONK Yield Farm",
@@ -80,6 +93,7 @@ const ProjectsSection = () => {
       growth: "+90%",
       rating: 4.4,
       status: "coming-soon" as const,
+      website: "https://farm.bonk.io",
     },
   ]
 

@@ -13,6 +13,10 @@ interface ProjectCardProps {
   image?: string
   website?: string
   status: "live" | "beta" | "coming-soon"
+  launchUrl?: string
+  dexUrl?: string
+  contractAddress?: string
+  analyticsUrl?: string
 }
 
 const ProjectCard = ({ 
@@ -24,7 +28,11 @@ const ProjectCard = ({
   rating, 
   image, 
   website,
-  status 
+  status,
+  launchUrl,
+  dexUrl,
+  contractAddress,
+  analyticsUrl
 }: ProjectCardProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -41,6 +49,17 @@ const ProjectCard = ({
       case "beta": return "Beta"
       case "coming-soon": return "Coming Soon"
       default: return "Unknown"
+    }
+  }
+
+  const handleLaunchApp = () => {
+    if (status === "coming-soon") return
+
+    // Priority: launchUrl > dexUrl > analyticsUrl
+    const targetUrl = launchUrl || dexUrl || analyticsUrl
+    
+    if (targetUrl) {
+      window.open(targetUrl, '_blank', 'noopener,noreferrer')
     }
   }
 
@@ -112,11 +131,16 @@ const ProjectCard = ({
             size="sm" 
             className="flex-1"
             disabled={status === "coming-soon"}
+            onClick={handleLaunchApp}
           >
             {status === "coming-soon" ? "Coming Soon" : "Launch App"}
           </Button>
           {website && (
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.open(website, '_blank', 'noopener,noreferrer')}
+            >
               <ExternalLink className="w-4 h-4" />
             </Button>
           )}
