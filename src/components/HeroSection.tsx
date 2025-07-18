@@ -58,16 +58,16 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/20 hover:border-primary/20 transition-all duration-300">
-              <div className="text-3xl font-bold text-primary mb-2">150+</div>
-              <div className="text-muted-foreground">Listed Tokens</div>
+              <div className="text-3xl font-bold text-primary mb-2">New</div>
+              <div className="text-muted-foreground">Platform Launch</div>
             </div>
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/20 hover:border-primary/20 transition-all duration-300">
-              <div className="text-3xl font-bold text-primary mb-2">50K+</div>
-              <div className="text-muted-foreground">Community Members</div>
+              <div className="text-3xl font-bold text-primary mb-2">Open</div>
+              <div className="text-muted-foreground">For Submissions</div>
             </div>
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/20 hover:border-primary/20 transition-all duration-300">
-              <div className="text-3xl font-bold text-primary mb-2">$2M+</div>
-              <div className="text-muted-foreground">Total Value Locked</div>
+              <div className="text-3xl font-bold text-primary mb-2">Growing</div>
+              <div className="text-muted-foreground">Community</div>
             </div>
           </div>
         </div>

@@ -5,10 +5,10 @@ import { MessageSquare, Users, Trophy, Calendar, ExternalLink } from "lucide-rea
 
 const CommunitySection = () => {
   const communityStats = [
-    { label: "Discord Members", value: "45,000+", icon: MessageSquare },
-    { label: "Active Builders", value: "1,200+", icon: Users },
-    { label: "Projects Launched", value: "180+", icon: Trophy },
-    { label: "Events Hosted", value: "50+", icon: Calendar },
+    { label: "Platform Status", value: "Beta", icon: MessageSquare },
+    { label: "Early Adopters", value: "Join Us", icon: Users },
+    { label: "Token Submissions", value: "Open", icon: Trophy },
+    { label: "Community Events", value: "Coming Soon", icon: Calendar },
   ]
 
   const events = [
