@@ -26,6 +26,8 @@ const ProjectsSection = () => {
       rating: 0,
       image: "/lovable-uploads/18ac63c5-3b62-44c3-8edf-24138b039d38.png",
       status: "live" as const,
+      launchUrl: "https://letsbonk.fun/token/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
+      website: "https://boinkme.xyz/",
       dexUrl: "https://jup.ag/swap/SOL-CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       contractAddress: "CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       analyticsUrl: "https://dexscreener.com/solana/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
