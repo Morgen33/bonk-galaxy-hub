@@ -18,6 +18,15 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      name: "$BOINK",
+      description: "Revolutionary meme token built on the $BONK ecosystem. CA: CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
+      category: "DeFi",
+      users: "New",
+      growth: "🚀",
+      rating: 0,
+      status: "live" as const,
+    },
+    {
       name: "BONKSwap",
       description: "Decentralized exchange for trading $BONK and other meme tokens with lightning-fast swaps and minimal fees.",
       category: "DeFi",
