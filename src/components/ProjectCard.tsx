@@ -49,7 +49,13 @@ const ProjectCard = ({
       {/* Project Image/Icon */}
       <div className="relative h-48 bg-gradient-secondary overflow-hidden">
         {image ? (
-          <img src={image} alt={name} className="w-full h-full object-cover" />
+          <div className="w-full h-full flex items-center justify-center p-4">
+            <img 
+              src={image} 
+              alt={name} 
+              className="w-32 h-32 object-contain rounded-full bg-white p-2" 
+            />
+          </div>
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
