@@ -1,63 +1,61 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { MessageSquare, Users, Trophy, Calendar, ExternalLink } from "lucide-react"
-
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { MessageSquare, Users, Trophy, Calendar, ExternalLink } from "lucide-react";
 const CommunitySection = () => {
-  const communityStats = [
-    { label: "Platform Status", value: "Beta", icon: MessageSquare },
-    { label: "Early Adopters", value: "Join Us", icon: Users },
-    { label: "Token Submissions", value: "Open", icon: Trophy },
-    { label: "Community Events", value: "Coming Soon", icon: Calendar },
-  ]
-
-  const events = [
-    {
-      title: "BONK Builder Bootcamp",
-      date: "Dec 15, 2024",
-      type: "Workshop",
-      participants: "500+",
-      status: "upcoming"
-    },
-    {
-      title: "Meme Coin Summit 2024",
-      date: "Dec 20, 2024",
-      type: "Conference",
-      participants: "2000+",
-      status: "upcoming"
-    },
-    {
-      title: "BONK Hackathon Finals",
-      date: "Jan 10, 2025",
-      type: "Competition",
-      participants: "1000+",
-      status: "registration"
-    }
-  ]
-
-  const testimonials = [
-    {
-      name: "Alex Chen",
-      role: "DeFi Developer",
-      text: "The BONK community helped me launch my first DeFi protocol. The support and resources are incredible!",
-      project: "BONKSwap"
-    },
-    {
-      name: "Sarah Kim",
-      role: "Game Designer",
-      text: "From idea to launch in 3 months thanks to the amazing network and feedback from the community.",
-      project: "BONK Wars"
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "NFT Artist",
-      text: "The community's enthusiasm for creative projects made my NFT collection a massive success.",
-      project: "BONK Punks"
-    }
-  ]
-
-  return (
-    <section id="community" className="py-20 px-4 sm:px-6 lg:px-8">
+  const communityStats = [{
+    label: "Platform Status",
+    value: "Beta",
+    icon: MessageSquare
+  }, {
+    label: "Early Adopters",
+    value: "Join Us",
+    icon: Users
+  }, {
+    label: "Token Submissions",
+    value: "Open",
+    icon: Trophy
+  }, {
+    label: "Community Events",
+    value: "Coming Soon",
+    icon: Calendar
+  }];
+  const events = [{
+    title: "BONK Builder Bootcamp",
+    date: "Dec 15, 2024",
+    type: "Workshop",
+    participants: "500+",
+    status: "upcoming"
+  }, {
+    title: "Meme Coin Summit 2024",
+    date: "Dec 20, 2024",
+    type: "Conference",
+    participants: "2000+",
+    status: "upcoming"
+  }, {
+    title: "BONK Hackathon Finals",
+    date: "Jan 10, 2025",
+    type: "Competition",
+    participants: "1000+",
+    status: "registration"
+  }];
+  const testimonials = [{
+    name: "Alex Chen",
+    role: "DeFi Developer",
+    text: "The BONK community helped me launch my first DeFi protocol. The support and resources are incredible!",
+    project: "BONKSwap"
+  }, {
+    name: "Sarah Kim",
+    role: "Game Designer",
+    text: "From idea to launch in 3 months thanks to the amazing network and feedback from the community.",
+    project: "BONK Wars"
+  }, {
+    name: "Marcus Rodriguez",
+    role: "NFT Artist",
+    text: "The community's enthusiasm for creative projects made my NFT collection a massive success.",
+    project: "BONK Punks"
+  }];
+  return <section id="community" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -73,8 +71,7 @@ const CommunitySection = () => {
 
         {/* Community Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {communityStats.map((stat, index) => (
-            <Card key={stat.label} className="text-center hover:shadow-glow transition-all duration-300">
+          {communityStats.map((stat, index) => <Card key={stat.label} className="text-center hover:shadow-glow transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-3">
                   <div className="p-3 bg-gradient-primary rounded-full">
@@ -84,8 +81,7 @@ const CommunitySection = () => {
                 <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Events and Testimonials */}
@@ -119,8 +115,7 @@ const CommunitySection = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="p-4 bg-gradient-accent rounded-lg border border-border/20">
+                {testimonials.map((testimonial, index) => <div key={index} className="p-4 bg-gradient-accent rounded-lg border border-border/20">
                     <p className="text-sm italic mb-3">"{testimonial.text}"</p>
                     <div className="flex items-center justify-between">
                       <div>
@@ -131,8 +126,7 @@ const CommunitySection = () => {
                         {testimonial.project}
                       </Badge>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </CardContent>
           </Card>
@@ -148,16 +142,10 @@ const CommunitySection = () => {
                 of meme coin applications and experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="hero" 
-                  onClick={() => window.open('https://letsbonk.fun/', '_blank')}
-                >
+                <Button variant="hero" onClick={() => window.open('https://letsbonk.fun/', '_blank')}>
                   Lets bonk
                 </Button>
-                <Button variant="outline">
-                  <MessageSquare className="w-4 h-4 mr-2" />
-                  Join Discord
-                </Button>
+                
                 <Button variant="outline">
                   <Users className="w-4 h-4 mr-2" />
                   Follow Twitter
@@ -167,8 +155,6 @@ const CommunitySection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  )
-}
-
-export default CommunitySection
+    </section>;
+};
+export default CommunitySection;
