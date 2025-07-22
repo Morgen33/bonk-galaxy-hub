@@ -99,31 +99,13 @@ const CommunitySection = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {events.map((event, index) => (
-                  <div key={index} className="flex items-start justify-between p-4 bg-muted/20 rounded-lg border border-border/20">
-                    <div>
-                      <h4 className="font-semibold mb-1">{event.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-2">{event.date}</p>
-                      <div className="flex items-center space-x-2">
-                        <Badge variant="outline" className="text-xs">
-                          {event.type}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {event.participants} participants
-                        </span>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Join
-                    </Button>
-                  </div>
-                ))}
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">🚀</div>
+                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
+                <p className="text-muted-foreground">
+                  Exciting events are being planned. Stay tuned for announcements!
+                </p>
               </div>
-              <Button variant="outline" className="w-full mt-4">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View All Events
-              </Button>
             </CardContent>
           </Card>
 
@@ -166,7 +148,13 @@ const CommunitySection = () => {
                 of meme coin applications and experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero">
+                <Button 
+                  variant="hero" 
+                  onClick={() => window.open('https://letsbonk.fun/', '_blank')}
+                >
+                  Lets bonk
+                </Button>
+                <Button variant="outline">
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Join Discord
                 </Button>
