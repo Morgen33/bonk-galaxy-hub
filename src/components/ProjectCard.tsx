@@ -151,13 +151,13 @@ const ProjectCard = ({
         {/* Actions */}
         <div className="flex flex-col space-y-2">
           <Button 
-            variant="default" 
+            variant="yellow" 
             size="sm" 
             className="w-full"
             disabled={status === "coming-soon"}
             onClick={handleLaunchApp}
           >
-            {status === "coming-soon" ? "Coming Soon" : (buttonText || "Launch App")}
+            {status === "coming-soon" ? "Coming Soon" : "Letsbonk.fun"}
           </Button>
           <div className="flex space-x-2">
             {website && (
