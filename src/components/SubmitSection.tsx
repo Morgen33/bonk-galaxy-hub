@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Upload, CheckCircle, PlusCircle, Rocket, Send } from "lucide-react";
+import { supabase, type ProjectSubmission } from "@/lib/supabase";
+import { useToast } from "@/hooks/use-toast";
 const SubmitSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     projectName: "",
     description: "",
@@ -30,10 +34,84 @@ const SubmitSection = () => {
     text: "Verified smart contracts",
     met: false
   }];
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      // Upload image if provided
+      let imageUrl = null;
+      if (formData.projectImage) {
+        const fileExt = formData.projectImage.name.split('.').pop();
+        const fileName = `${Date.now()}.${fileExt}`;
+        
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('project-images')
+          .upload(fileName, formData.projectImage);
+
+        if (uploadError) {
+          throw uploadError;
+        }
+
+        const { data: { publicUrl } } = supabase.storage
+          .from('project-images')
+          .getPublicUrl(fileName);
+        
+        imageUrl = publicUrl;
+      }
+
+      // Submit project data
+      const projectData: Omit<ProjectSubmission, 'id' | 'created_at'> = {
+        project_name: formData.projectName,
+        description: formData.description,
+        category: formData.category,
+        website: formData.website,
+        twitter: formData.twitter || undefined,
+        discord: formData.discord || undefined,
+        contract_address: formData.contractAddress,
+        launch_url: formData.launchUrl,
+        telegram_url: formData.telegramUrl || undefined,
+        project_image_url: imageUrl || undefined,
+        status: 'pending'
+      };
+
+      const { error } = await supabase
+        .from('project_submissions')
+        .insert([projectData]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Project submitted successfully!",
+        description: "Your project has been submitted for review. We'll get back to you within 48 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        projectName: "",
+        description: "",
+        category: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        contractAddress: "",
+        launchUrl: "",
+        telegramUrl: "",
+        projectImage: null
+      });
+
+    } catch (error) {
+      console.error('Error submitting project:', error);
+      toast({
+        title: "Error submitting project",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
@@ -168,9 +246,9 @@ const SubmitSection = () => {
                   <input type="url" name="telegramUrl" value={formData.telegramUrl} onChange={handleInputChange} className="w-full p-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="https://t.me/your-group" />
                 </div>
 
-                <Button type="submit" variant="hero" className="w-full">
+                <Button type="submit" variant="hero" className="w-full" disabled={isSubmitting}>
                   <Rocket className="w-4 h-4 mr-2" />
-                  Submit Project
+                  {isSubmitting ? "Submitting..." : "Submit Project"}
                 </Button>
               </form>
             </CardContent>

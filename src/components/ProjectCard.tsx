@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Users, TrendingUp, Star, Send, Copy } from "lucide-react";
+import { ExternalLink, Users, TrendingUp, Star, Send, Copy, Twitter } from "lucide-react";
 interface ProjectCardProps {
   name: string;
   description: string;
@@ -18,6 +18,7 @@ interface ProjectCardProps {
   analyticsUrl?: string;
   buttonText?: string;
   telegramUrl?: string;
+  twitterUrl?: string;
 }
 const ProjectCard = ({
   name,
@@ -34,7 +35,8 @@ const ProjectCard = ({
   contractAddress,
   analyticsUrl,
   buttonText,
-  telegramUrl
+  telegramUrl,
+  twitterUrl
 }: ProjectCardProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -141,11 +143,15 @@ const ProjectCard = ({
                 <ExternalLink className="w-4 h-4 mr-1" />
                 Website
               </Button>}
-            {telegramUrl && <Button variant="outline" size="sm" className="flex-1" onClick={() => window.open(telegramUrl, '_blank', 'noopener,noreferrer')}>
-                <Send className="w-4 h-4 mr-1" />
-                Telegram
+            {twitterUrl && <Button variant="outline" size="sm" className="flex-1" onClick={() => window.open(twitterUrl, '_blank', 'noopener,noreferrer')}>
+                <Twitter className="w-4 h-4 mr-1" />
+                Twitter
               </Button>}
           </div>
+          {telegramUrl && <Button variant="outline" size="sm" className="w-full mt-2" onClick={() => window.open(telegramUrl, '_blank', 'noopener,noreferrer')}>
+              <Send className="w-4 h-4 mr-1" />
+              Telegram
+            </Button>}
         </div>
       </CardContent>
     </Card>;

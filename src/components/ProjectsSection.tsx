@@ -32,7 +32,8 @@ const ProjectsSection = () => {
       contractAddress: "CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       analyticsUrl: "https://dexscreener.com/solana/CdvEbor8zTsVZmQLGFHpn95YwjBairPqwDK21787bonk",
       buttonText: "letsbonk.fun",
-      telegramUrl: "https://t.me/boinktoken",
+      telegramUrl: "https://t.me/+-LtixEEtRJk1M2I0",
+      twitterUrl: "https://x.com/boinkonbonk",
     },
     {
       name: "BONKSwap",
