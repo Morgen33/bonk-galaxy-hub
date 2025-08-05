@@ -19,7 +19,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       name: "$BOINK",
-      description: "Community-driven meme token with explosive growth potential and strong community backing.",
+      description: "Boink is the Web3 dating and networking platform where crypto lovers, builders, and degens connect through AI-powered compatibility. Online & IRL",
       category: "Meme Token",
       users: "15K",
       growth: "+340%",
